@@ -11,6 +11,11 @@ import { CovenantCrossChain } from '@/components/covenant-cross-chain';
 import { CovenantAIHelper } from '@/components/covenant-ai-helper';
 import { CovenantAnalytics } from '@/components/covenant-analytics';
 import { WalletConnectButton } from '@/components/connectkit-button';
+import { ExplorerPanel } from '@/components/ExplorerPanel';
+import { BridgeRegistry } from '@/components/BridgeRegistry';
+import { MultisigList } from '@/components/MultisigList';
+import { TreasureDataPanel } from '@/components/TreasureDataPanel';
+import { MagicSwapWidget } from '@/components/MagicSwapWidget';
 
 export default function CovenantIntegrationPage() {
   return (
@@ -34,6 +39,23 @@ export default function CovenantIntegrationPage() {
           {/* Analytics Dashboard */}
           <section>
             <CovenantAnalytics />
+          </section>
+
+          {/* Explorer & registry */}
+          <section className="grid gap-4">
+            <ExplorerPanel />
+            <BridgeRegistry />
+          </section>
+
+          {/* Multisigs and Treasure data */}
+          <section className="grid gap-4">
+            <MultisigList />
+            <TreasureDataPanel />
+          </section>
+
+          {/* MagicSwap stub */}
+          <section>
+            <MagicSwapWidget />
           </section>
 
           {/* Payment Integration */}
