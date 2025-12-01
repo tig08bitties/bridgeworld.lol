@@ -9,6 +9,7 @@ import { COVENANT_DATA } from '@/lib/covenant-data';
 import { COVENANT_PAYMENT_CONFIG } from '@/lib/payments/covenant-x402-config';
 import { paymentMiddleware } from 'x402-next';
 import { auto } from '@swader/x402facilitators';
+import type { Address } from 'viem';
 
 /**
  * Covenant Data Handler
@@ -22,7 +23,7 @@ export async function GET(request: NextRequest) {
 
     // x402 payment middleware - payments go to covenant address
     const handler = paymentMiddleware(
-      COVENANT_PAYMENT_CONFIG.primaryRecipient,
+      COVENANT_PAYMENT_CONFIG.primaryRecipient as Address,
       { '/api/covenant/data': COVENANT_PAYMENT_CONFIG.resources['/api/covenant'] },
       auto
     );

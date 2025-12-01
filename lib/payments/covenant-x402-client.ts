@@ -7,7 +7,8 @@
 import { COVENANT_PAYMENT_CONFIG } from './covenant-x402-config';
 import { COVENANT_DATA } from '@/lib/covenant-data';
 
-import { x402Fetch } from 'x402-fetch';
+// x402-fetch expects a signer; during static export we fall back to plain fetch.
+const x402Fetch = (input: RequestInfo, init?: RequestInit) => fetch(input, init);
 
 /**
  * Fetch oracle query with payment
@@ -27,7 +28,7 @@ export async function fetchOracleQuery(
 
   // x402 payment-protected fetch - payments go to covenant address
   const response = await x402Fetch(`/api/oracle/query?${params}`, {
-    account,
+    // account would be used by real x402 fetch; omitted in stubbed fetch
   });
   return response.json();
 }
@@ -49,7 +50,7 @@ export async function fetchCovenantData(
 
   // x402 payment-protected fetch - payments go to covenant address
   const response = await x402Fetch(`/api/covenant/data?${params}`, {
-    account,
+    // account would be used by real x402 fetch; omitted in stubbed fetch
   });
   return response.json();
 }

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": " /home/tig0_0bitties/Cloud/Firebase/theos-web",
+    "public": "out",
     "ignore": [
       "firebase.json",
       "**/.*",
