@@ -16,6 +16,7 @@ import { BridgeRegistry } from '@/components/BridgeRegistry';
 import { MultisigList } from '@/components/MultisigList';
 import { TreasureDataPanel } from '@/components/TreasureDataPanel';
 import { MagicSwapWidget } from '@/components/MagicSwapWidget';
+import { SafePanel } from '@/components/SafePanel';
 
 export default function CovenantIntegrationPage() {
   return (
@@ -49,6 +50,7 @@ export default function CovenantIntegrationPage() {
 
           {/* Multisigs and Treasure data */}
           <section className="grid gap-4">
+            <SafePanel />
             <MultisigList />
             <TreasureDataPanel />
           </section>
