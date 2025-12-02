@@ -16,6 +16,15 @@ const SAFE_OWNERS = [
 const SAFE_VERSION = "1.4.1";
 const SAFE_ADDED_AT = 1731792000000; // Nov 15, 2024
 
+const EXPLORERS = [
+  { name: "Arbiscan", href: (addr: string) => `https://arbiscan.io/address/${addr}` },
+  { name: "Blockscout (Arbitrum)", href: (addr: string) => `https://arbitrum.blockscout.com/address/${addr}` },
+  { name: "TreasureScan", href: (addr: string) => `https://treasurescan.io/address/${addr}` },
+  { name: "DeBank", href: (addr: string) => `https://debank.com/profile/${addr}` },
+  { name: "OpenSea", href: (addr: string) => `https://opensea.io/${addr}` },
+  { name: "Magic Eden", href: (addr: string) => `https://magiceden.io/wallets/${addr}` },
+];
+
 function formatDate(ts: number) {
   const d = new Date(ts);
   return isNaN(d.getTime()) ? "" : d.toISOString().split("T")[0];
@@ -52,7 +61,7 @@ export function SafePanel() {
           <h3 className="text-white font-semibold">Safe{`{wallet}`}: {SAFE_NAME}</h3>
           <p className="text-sm text-gray-300">Arbitrum One (chainId {SAFE_CHAIN_ID}) – threshold {SAFE_THRESHOLD}-of-{SAFE_OWNERS.length}</p>
         </div>
-        <div className="flex gap-2 text-xs text-indigo-300">
+        <div className="flex gap-2 text-xs text-indigo-300 flex-wrap justify-end">
           <a
             href={`https://safe.global/apps/open?safe=arb1:${SAFE_ADDRESS}`}
             target="_blank"
@@ -61,14 +70,17 @@ export function SafePanel() {
           >
             Open in Safe
           </a>
-          <a
-            href={`https://arbiscan.io/address/${SAFE_ADDRESS}`}
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-indigo-100"
-          >
-            Explorer
-          </a>
+          {EXPLORERS.map((ex) => (
+            <a
+              key={ex.name}
+              href={ex.href(SAFE_ADDRESS)}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-indigo-100"
+            >
+              {ex.name}
+            </a>
+          ))}
         </div>
       </div>
 
