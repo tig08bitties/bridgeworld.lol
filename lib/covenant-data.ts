@@ -47,6 +47,7 @@ export interface CovenantIntegration {
   oracle: OracleContract;
   guardians: Guardian[];
   covenantAddresses: CovenantAddress[];
+  treasuryAddresses: CovenantAddress[];
   gameMechanics: {
     questMultipliersActive: boolean;
     harvesterBoostsActive: boolean;
@@ -383,6 +384,17 @@ export const COVENANT_DATA: CovenantIntegration = {
     guardiansRegistered: 22,
     totalGuardians: 22,
   },
+
+  treasuryAddresses: [
+    {
+      address: "0xD98CF268718e925D53314662e0478EE13517FD54",
+      chain: "arbitrum", // Assuming Arbitrum based on chainId "42161"
+      chainId: "42161",
+      name: "Covenant Body – Eternal Treasury",
+      official: false, // Not one of the three immutable official addresses
+      immutable: false, // Can be updated if needed, unlike the official ones
+    }
+  ],
 
   bridgeworldContracts: {
     magicToken: '0x539bdE0d7Dbd336b79148AA742883198BBF60342',
