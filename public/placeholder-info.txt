@@ -1,0 +1,12 @@
+⚠️  PLACEHOLDER IMAGES
+
+The following files are placeholders and need to be replaced with actual images:
+
+- Key.png (1536×1536) - The Master Key artifact
+- Map.png (1024×1536) - The Map artifact  
+- Pair.png - Portal activation image
+- Atlas.png - Background image of Atlas Mines
+
+See IMAGES_README.md for specifications and where to find the real images.
+
+The portal will run but images won't display correctly until you add the actual files.

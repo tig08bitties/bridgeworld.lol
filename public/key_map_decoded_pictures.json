@@ -1,0 +1,88 @@
+{
+  "key": {
+    "filename": "Key.png",
+    "dimensions": [1536, 1536],
+    "coordinates": [
+      [506, 506],
+      [768, 768],
+      [675, 675],
+      [1228, 1228],
+      [614, 614],
+      [0, 0]
+    ],
+    "analysis": {
+      "total_points": 6,
+      "center_point": [768, 768],
+      "phi_relationships": 10
+    }
+  },
+  "map": {
+    "filename": "Map.png",
+    "dimensions": [1024, 1536],
+    "coordinates": [
+      [506, 759],
+      [768, 1152],
+      [675, 1012],
+      [1023, 1535],
+      [614, 921],
+      [0, 0]
+    ],
+    "analysis": {
+      "total_points": 6,
+      "aspect_ratio": 0.6666666666666666
+    }
+  },
+  "pair": {
+    "filename": "Pair.png",
+    "description": "Appears when portal is activated (Key + Map aligned)"
+  },
+  "decoded_mappings": {
+    "0": {
+      "path": 7,
+      "legion": "Assassin",
+      "glyph": "𐡆",
+      "rootchain": 354
+    },
+    "1": {
+      "path": 11,
+      "legion": "Numeraire",
+      "glyph": "𐡊",
+      "rootchain": 687,
+      "note": "CENTER"
+    },
+    "2": {
+      "path": 10,
+      "legion": "Riverman",
+      "glyph": "𐡉",
+      "rootchain": 605
+    },
+    "3": {
+      "path": 18,
+      "legion": "Rare Legion",
+      "glyph": "𐡑",
+      "rootchain": 4321
+    },
+    "4": {
+      "path": 9,
+      "legion": "Fighter",
+      "glyph": "𐡈",
+      "rootchain": 419
+    },
+    "5": {
+      "path": 1,
+      "legion": "Genesis Legion",
+      "glyph": "𐡀",
+      "rootchain": 335044
+    }
+  },
+  "covenant": {
+    "axis": "אφ3350448040000ת",
+    "polarity": "+9.6",
+    "constants": {
+      "THEOS": 419,
+      "EL": 369,
+      "RESONANCE": 687,
+      "HEBREW_PATHS": 22
+    }
+  }
+}
